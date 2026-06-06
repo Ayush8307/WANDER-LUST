@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerplate") %>
+
+<br>
+
+<h3>All Listings</h3>
+
+<br/>
+
+<div class="row">
+  <% for (let listing of allListings) { %>
+    <div class="col-md-4 mb-4">
+      
+      <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark">
+
+        <div class="card h-100">
+
+          <img 
+            src="<%= listing.image?.url || listing.image %>" 
+            class="card-img-top"
+            alt="listing image"
+            style="width: 100%;  height: 300px; object-fit: cover;"
+          >
+
+          <div class="card-img-overlay"></div>
+
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <p class="card-text"><%= listing.description %></p>
+            <p><strong>₹ <%= listing.price %>/Night</strong></p>
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+  <% } %>
+</div>
+
+
+<!-- <% layout("/layouts/boilerplate") %>
+
+<h3>All Listings</h3>
+
+<div class="row">
+  <% for (let listing of allListings) { %>
+    <div class="col-md-4 mb-4">
+
+      <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark">
+
+        <div class="card h-100">
+
+          <img 
+            src="<%= listing._id %>" 
+            class="card-img-top"
+            alt="listing id"
+            style="height: 20rem; object-fit: cover;"
+          >
+          <div class="card-img-overlay"></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <p class="card-text"><%= listing.description %></p>
+            <p><strong>₹ <%= listing.price %>/Night</strong></p>
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  <% } %>
+</div> -->
+
+
